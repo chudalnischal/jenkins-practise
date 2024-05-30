@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo "this is the python compiler file"
                
-                git branch: 'main', url : 'https://github.com/nis7al/jenkins-practise.gitt'
+                git branch: 'main', url : 'https://github.com/nis7al/jenkins-practise.git'
             }
         }
 
