@@ -32,7 +32,7 @@ pipeline {
         stage('running the file') {
             steps {
                 echo " this is th step of running th file for compiling"
-                bat "${PYTHON_VERSION} main.py"'
+                bat "${PYTHON_VERSION} main.py"
         }
         }
         
