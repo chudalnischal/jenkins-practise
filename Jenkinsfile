@@ -4,7 +4,7 @@
 pipeline {
     agent any 
     environment {
-        GIT_REPO = "https://github.com/nis7al/Python-code-Library.git"
+        GIT_REPO = "https://github.com/nis7al/jenkins-practise.git"
         GIT_BRANCH = "main"
         PYTHON_VERSION = 'python3'
     }
@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo "this is the python compiler file"
                
-                git branch: 'main', url : 'https://github.com/nis7al/Python-code-Library.git'
+                git branch: 'main', url : 'https://github.com/nis7al/jenkins-practise.gitt'
             }
         }
 
