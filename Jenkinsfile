@@ -24,7 +24,7 @@ pipeline {
                 script{
                 if (fileExists('requirements.txt')){
                     echo "this is the script "
-                    bat python pip install -r requirements.txt"   
+                    bat python pip install -r requirements.txt 
                 else :
                     echo " there is not any requirement file in the repo"
                 }
