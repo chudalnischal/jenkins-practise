@@ -6,7 +6,7 @@ pipeline {
     environment {
         GIT_REPO = "https://github.com/nis7al/jenkins-practise.git"
         GIT_BRANCH = "main"
-        PYTHON_VERSION = 'python3'
+        PYTHON_VERSION = 'python'
     }
 
     stages {
