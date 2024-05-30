@@ -24,7 +24,7 @@ pipeline {
                 script{
                 if (fileExists('requirements.txt')){
                     echo "this is the script "
-                    bat python pip install -r requirements.txt 
+                    bat " ${PYTHON_VERSION} pip install -r requirements.txt "
                 }
              }
             }
@@ -32,7 +32,7 @@ pipeline {
         stage('running the file') {
             steps {
                 echo " this is th step of running th file for compiling"
-                bat 'python main.py'
+                bat "${PYTHON_VERSION} main.py"'
         }
         }
         
