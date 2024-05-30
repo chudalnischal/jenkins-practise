@@ -24,7 +24,7 @@ pipeline {
                 script{
                 if (fileExists('requirements.txt')){
                     echo "this is the script "
-                    bat "${PYTHON_VERSION} - m pip install requirements.txt"   
+                    bat "${PYTHON_VERSION}  pip install -r requirements.txt"   
                 }
              }
             }
