@@ -2,12 +2,12 @@
 // i am learning the jenkins by writing declarative pipeline instead of scripted pipeline
 
 pipeline {
-    agent Nischal-slaves
+    agent  { label 'jenkins'}
 
     environment{
         DOCKER_IMAGE = "https://hub.docker.com/_/python "
         DOCKER_REGISTRY = "https://hub.docker.com/"
-        DOCKER_PUSHING_REGISTRY = " nishal/nishal-dockerhub"
+        DOCKER_PUSHING_REGISTRY = "nishal/nishal-dockerhub"
         DOCKER_CREDENTIALS_ID = "nischal/nischaldockerhub1"
     }
 
