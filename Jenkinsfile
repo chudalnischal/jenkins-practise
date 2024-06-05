@@ -35,7 +35,7 @@ pipeline {
         stage(" Docker Image ") {
             steps {
                 echo " this is the stage where i will be pulling the docker image  "
-                docker_image  = docker.build("$(DOCKER_IMAGE)", ".")
+                docker_image  = docker.build("${DOCKER_IMAGE}", ".")
             }
         }
         stage('Running python file in the docker image ') {
