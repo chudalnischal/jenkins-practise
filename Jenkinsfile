@@ -35,8 +35,11 @@ pipeline {
 
         stage(" Docker Image ") {
             steps {
+                script {
                 echo " this is the stage where i will be pulling the docker image  "
                 docker_image  = docker.build("${DOCKER_IMAGE}", ".")
+                
+                }
             }
         }
 
@@ -58,9 +61,12 @@ pipeline {
         }
         stage(" Docker Image Push  ") {
             steps {
+                script {
                 echo " this is the stage where i will be pushing  the docker image  "
-                docker.withRegistry("https://${DOCKER_REGISTRY}", "${DOCKER_CREDENTIALS_ID}") 
-                docker.push()
+                docker.withRegistry("https://${DOCKER_REGISTRY}", "${DOCKER_CREDENTIALS_ID}")  {
+                docker.push() 
+                 }
+                } 
             }
         }
         
