@@ -5,7 +5,7 @@ pipeline {
     agent  { label 'jenkins'}
 
     environment{
-        DOCKER_IMAGE = "https://hub.docker.com/_/python "
+        DOCKER_IMAGE = "python:latest"
         DOCKER_REGISTRY = "https://hub.docker.com/"
         DOCKER_PUSHING_REGISTRY = "nishal/nishal-dockerhub"
         DOCKER_CREDENTIALS_ID = "nischal/nischaldockerhub1"
@@ -35,7 +35,7 @@ pipeline {
         stage(" Docker Image ") {
             steps {
                 echo " this is the stage where i will be pulling the docker image  "
-                docker_image  = docker.Build("$(DOCKER_IMAGE)", ".")
+                docker_image  = docker.build("$(DOCKER_IMAGE)", ".")
             }
         }
         stage('Running python file in the docker image ') {
@@ -56,7 +56,7 @@ pipeline {
             steps {
                 echo " this is the stage where i will be pushing  the docker image  "
                 docker.withRegistry("https://${DOCKER_REGISTRY}", "${DOCKER_CREDENTIALS_ID}") 
-                docker.Push()
+                docker.push()
             }
         }
         
