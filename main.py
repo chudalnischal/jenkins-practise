@@ -1,4 +1,9 @@
 import datetime
 
-date_now = datetime.datetime.now()
-print(date_now)
+present_date = datetime.datetime.now()
+
+print(present_date)
+
+print("the container is running")
+
+print(" it is running inside the container")
