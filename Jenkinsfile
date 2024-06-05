@@ -26,9 +26,10 @@ pipeline {
                 script{
                     docker.withRegistry("https://${DOCKER_PUSHING_REGISTRY}", "${DOCKER_CREDENTIALS_ID}") {
                         echo 'Logged in to Docker registry'
+                    }
                 }
 
-            }
+            } 
 
         }
 
@@ -38,6 +39,9 @@ pipeline {
                 docker_image  = docker.build("${DOCKER_IMAGE}", ".")
             }
         }
+
+
+
         stage('Running python file in the docker image ') {
             steps {
                 echo " this is th step where i will be running the python script in the container"
@@ -50,7 +54,7 @@ pipeline {
 
                 }
         
-        }
+            }
         }
         stage(" Docker Image Push  ") {
             steps {
@@ -62,4 +66,5 @@ pipeline {
         
             
     }
-}
+   }
+
