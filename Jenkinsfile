@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo "Checking out the repository"
                 // Add git checkout step
-                git 'https://github.com/nis7al/jenkins-practise.git'
+                git branch: 'main', url: 'https://github.com/nis7al/jenkins-practise.git'
             }
         }
 
