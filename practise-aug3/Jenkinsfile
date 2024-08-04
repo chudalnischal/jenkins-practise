@@ -1,0 +1,43 @@
+// this is the jenkins file for my docekr project
+// in this jekins file i will add from github and send it to the dockerhub for creating the image 
+pipeline {
+    agent { label: jenkins}
+
+    enviroment{
+        DOCKER_REGISTRY: "https://hub.docker.com/"
+        DOCKER_PUSH: " nischalchudal/jenkinspipeline"
+        DOCKER_CREDIENTIALS: " nischalchudal/nischaldockerhub1"
+        DOCKER_IMAGE_NAME: 'ubuntu-webinstall/1.2'
+    }
+
+    stages {
+
+        stage('Checking out the repo ') {
+            steps {
+                echo" this is the git hub accessing stage " 
+            }
+        }
+
+        stage('Building docker image ') {
+        steps{
+            script {
+                // building the docker image 
+                docker.build("${DOCKER_IMAGE_NAME}",".")
+
+            }
+        }
+        }
+
+        stage('pushing the image to the dockerhub') {
+            steps {
+                echo " this is where we will bw puhing thr image to the dockerhub"
+                script {
+                    // This step should not normally be used in your script. Consult the inline help for details.
+                    withDockerRegistry(credentialsId: 'nischal-dockerhub', url: 'nischalchudal/jenkinspipeline') 
+}
+                }
+
+            }
+        }
+    }
+}
