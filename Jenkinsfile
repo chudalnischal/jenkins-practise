@@ -2,9 +2,9 @@ pipeline {
     agent { label 'jenkins' }
 
     environment {
-        DOCKER_REGISTRY = "https://hub.docker.com/"
+        DOCKER_REGISTRY = "https://index.docker.io/v1/"
         DOCKER_PUSH = "nischalchudal/jenkinspipeline"
-        DOCKER_CREDENTIALS = "nischalchudal/nischaldockerhub1" // Correct the credential ID here
+        DOCKER_CREDENTIALS = "nischal-dockerhub" // Correct the credential ID here
         DOCKER_IMAGE_NAME = "nischalchudal/ubuntu-webinstall:1.2"
     }
 
@@ -39,3 +39,4 @@ pipeline {
             }
         }
     }
+}
