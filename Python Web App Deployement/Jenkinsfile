@@ -2,10 +2,10 @@ pipeline {
     agent { label 'jenkins' }
 
     environment {
-        DOCKER_REGISTRY = "https://index.docker.io/v1/"
-        DOCKER_PUSH = "nischalchudal/jenkinspipeline"
-        DOCKER_CREDENTIALS = "nischal-dockerhub" // Correct the credential ID here
-        DOCKER_IMAGE_NAME = "nischalchudal/ubuntu-webinstall:1.2"
+        DOCKER_REGISTRY = "https://index.docker.io/v1/" // docker registry url
+        DOCKER_PUSH = "my repo" // docker repos
+        DOCKER_CREDENTIALS = "my-crediential" //  # user id of the dockerhub
+        DOCKER_IMAGE_NAME = "nischalchudal/flask:1.5" // image name 
     }
 
     stages {
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo "Checking out the repository"
                 // Add git checkout step
-                git branch: 'main', url: 'https://github.com/nis7al/jenkins-practise.git'
+                git branch: 'main', url: 'https://github.com/chudalnischal/Cloud-Projects.git'
             }
         }
 
