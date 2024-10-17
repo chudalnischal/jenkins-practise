@@ -28,23 +28,6 @@ To get started with these automation tasks, ensure you have Jenkins set up in yo
 - Git for version control
 - Basic knowledge of Jenkins pipeline
 
-## Projects
-
-### Project 1: Python Web App Deployment
-Automated deployment of a Python-based web application using Jenkins. Key features of this project:
-- Fetches code from a GitHub repository
-- Builds the web app using Jenkins pipeline
-- Automates deployment in a Docker container
-
-Check out the detailed instructions for [Python Web App Deployment]
-
-### Project 2: Docker Integration
-This project explores how Jenkins can be integrated with Docker for building and deploying applications in containers.
-- Automatically builds a Docker image from the source code
-- Pushes the image to DockerHub
-- Deploys the containerized application using Jenkins pipeline
-
-Check out the detailed instructions for [Docker Integration]
 
 ### Upcoming Projects
 
